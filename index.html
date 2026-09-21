@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plomberie Stema — Plombier d'exception à Paris</title>
+<meta name="description" content="Maison de plomberie parisienne depuis 1998. Dépannage 24h/24, rénovation de salles de bains, chauffage et robinetterie haut de gamme. Devis gratuit sous 24h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --email:#0B3B3C;
+  --email-profond:#062425;
+  --laiton:#B98A3C;
+  --laiton-clair:#E0C08A;
+  --porcelaine:#EDEFEB;
+  --porcelaine-2:#E2E6E1;
+  --encre:#13201F;
+  --zinc:#7C8A87;
+
+  --fond:var(--porcelaine);
+  --fond-2:#F6F7F4;
+  --texte:var(--encre);
+  --texte-doux:#4A5957;
+  --filet:rgba(19,32,31,.16);
+  --panneau:var(--email);
+  --panneau-texte:#E7EDEA;
+
+  --display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --corps:"Archivo","Helvetica Neue",Arial,sans-serif;
+
+  --mesure:min(1180px,100% - 3rem);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --fond:#071C1D;
+    --fond-2:#0B2627;
+    --texte:#E7EDEA;
+    --texte-doux:#A9BAB7;
+    --filet:rgba(224,192,138,.22);
+    --panneau:#041516;
+    --porcelaine-2:#0F2C2D;
+  }
+}
+:root[data-theme="dark"]{
+  --fond:#071C1D;
+  --fond-2:#0B2627;
+  --texte:#E7EDEA;
+  --texte-doux:#A9BAB7;
+  --filet:rgba(224,192,138,.22);
+  --panneau:#041516;
+  --porcelaine-2:#0F2C2D;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--fond);color:var(--texte);
+  font-family:var(--corps);font-size:clamp(1rem,.96rem + .2vw,1.075rem);
+  line-height:1.62;font-weight:400;-webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--laiton);outline-offset:3px;border-radius:2px}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.005em;line-height:1.08;margin:0}
+h2{font-size:clamp(2rem,1.3rem + 2.5vw,3.25rem)}
+h3{font-size:1.3rem;line-height:1.25}
+p{margin:0 0 1rem}
+.wrap{width:var(--mesure);margin-inline:auto}
+section{padding:clamp(4.5rem,9vw,8rem) 0}
+.chapo{color:var(--texte-doux);max-width:62ch}
+
+/* ---------- barre de navigation ---------- */
+.barre{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb,var(--fond) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--filet);
+}
+.barre .wrap{display:flex;align-items:center;gap:1.5rem;height:72px}
+.marque{display:flex;flex-direction:column;line-height:1;text-decoration:none;margin-right:auto}
+.marque b{font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:.13em}
+.marque span{font-size:.62rem;letter-spacing:.42em;color:var(--laiton);margin-top:.38rem;text-transform:uppercase}
+.liens{display:flex;gap:1.75rem;font-size:.9rem}
+.liens a{text-decoration:none;color:var(--texte-doux);padding-block:.35rem;border-bottom:1px solid transparent}
+.liens a:hover{color:var(--texte);border-bottom-color:var(--laiton)}
+@media (max-width:900px){.liens{display:none}}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--corps);font-size:.95rem;font-weight:500;letter-spacing:.01em;
+  padding:.85rem 1.5rem;border-radius:1px;text-decoration:none;border:1px solid var(--laiton);
+  background:var(--laiton);color:#12100B;cursor:pointer;transition:background .25s,color .25s;
+}
+.btn:hover{background:var(--laiton-clair);border-color:var(--laiton-clair)}
+.btn.creux{background:transparent;color:var(--laiton)}
+.btn.creux:hover{background:var(--laiton);color:#12100B}
+.btn.pleine{width:100%}
+.barre .btn{padding:.7rem 1.15rem}
+
+/* ---------- héros ---------- */
+.heros{
+  position:relative;background:var(--email);color:#E7EDEA;overflow:hidden;
+  padding:clamp(4rem,8vw,7rem) 0 clamp(3.5rem,6vw,5.5rem);
+}
+.heros::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--laiton),transparent)}
+.heros .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media (max-width:960px){.heros .wrap{grid-template-columns:1fr}.schema{order:-1}}
+.heros h1{font-size:clamp(2.6rem,1.4rem + 4.6vw,5rem);color:#F4F2EC}
+.heros h1 em{font-style:italic;font-weight:400}
+.sur-titre{font-size:.72rem;letter-spacing:.34em;color:var(--laiton-clair);margin:0 0 1.75rem;text-transform:uppercase}
+.heros p.intro{color:#B9CBC7;max-width:46ch;margin-top:1.5rem;font-size:1.06rem}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
+.tel-grand{font-family:var(--display);font-size:clamp(1.6rem,1.1rem + 1.6vw,2.15rem);text-decoration:none;color:#F4F2EC;display:inline-block;border-bottom:1px solid rgba(224,192,138,.45);padding-bottom:.15rem}
+.tel-grand:hover{border-bottom-color:var(--laiton-clair)}
+.dispo{display:flex;align-items:center;gap:.55rem;margin-top:2.5rem;font-size:.86rem;color:#9FB4B0}
+.pastille{width:7px;height:7px;border-radius:50%;background:#6FD3A5;box-shadow:0 0 0 4px rgba(111,211,165,.18)}
+.schema{position:relative}
+.schema svg{width:100%;height:auto;display:block}
+.trace{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:couler 2.6s cubic-bezier(.65,.02,.24,1) .25s forwards}
+@keyframes couler{to{stroke-dashoffset:0}}
+.goutte{opacity:0;animation:paraitre .8s ease 2.5s forwards}
+@keyframes paraitre{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.trace{stroke-dashoffset:0}.goutte{opacity:1}}
+
+/* ---------- bandeau de preuves ---------- */
+.preuves{background:var(--email-profond);color:#C6D6D2;padding:0}
+.preuves ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.preuves li{padding:1.6rem 1.25rem;text-align:center;font-size:.83rem;letter-spacing:.06em;border-left:1px solid rgba(224,192,138,.18)}
+.preuves li:first-child{border-left:0}
+.preuves b{display:block;font-family:var(--display);font-size:1.75rem;color:var(--laiton-clair);font-weight:400;margin-bottom:.3rem;letter-spacing:0}
+@media (max-width:760px){.preuves ul{grid-template-columns:repeat(2,1fr)}.preuves li:nth-child(3){border-left:0}.preuves li:nth-child(n+3){border-top:1px solid rgba(224,192,138,.18)}}
+
+/* ---------- en-tête de section avec colonne ---------- */
+.tete{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;margin-bottom:clamp(2.5rem,5vw,4rem);align-items:start}
+.tete .colonne{width:1px;background:linear-gradient(var(--laiton),transparent);align-self:stretch;min-height:120px;position:relative}
+.tete .colonne::before{content:"";position:absolute;top:0;left:-3px;width:7px;height:7px;background:var(--laiton);border-radius:50%}
+.tete h2{margin-bottom:.9rem}
+
+/* ---------- prestations ---------- */
+.prestations{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0}
+.presta{padding:2rem 2rem 2.25rem;border-top:1px solid var(--filet);border-left:1px solid var(--filet)}
+.presta:nth-child(3n+1){border-left:0}
+@media (max-width:1040px){.presta:nth-child(3n+1){border-left:1px solid var(--filet)}.presta:nth-child(2n+1){border-left:0}}
+@media (max-width:640px){.presta{border-left:0!important;padding-inline:0}}
+.presta svg{color:var(--laiton);margin-bottom:1.1rem}
+.presta h3{margin-bottom:.6rem}
+.presta p{color:var(--texte-doux);font-size:.95rem;margin:0}
+.presta ul{list-style:none;margin:1rem 0 0;padding:0;font-size:.88rem;color:var(--texte-doux)}
+.presta li{padding-left:1.1rem;position:relative;margin-bottom:.3rem}
+.presta li::before{content:"";position:absolute;left:0;top:.65em;width:5px;height:1px;background:var(--laiton)}
+
+/* ---------- urgence ---------- */
+.urgence{background:var(--panneau);color:#E7EDEA}
+.urgence .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:860px){.urgence .wrap{grid-template-columns:1fr}}
+.urgence h2{color:#F4F2EC}
+.urgence p{color:#B9CBC7}
+.carte-urgence{border:1px solid rgba(224,192,138,.35);padding:2rem}
+.carte-urgence p{font-size:.9rem;margin-bottom:1.5rem}
+.horaire{display:flex;justify-content:space-between;font-size:.86rem;padding:.6rem 0;border-bottom:1px solid rgba(224,192,138,.18);color:#C6D6D2}
+.horaire:last-of-type{border-bottom:0;margin-bottom:1.5rem}
+
+/* ---------- maison ---------- */
+.maison .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+@media (max-width:900px){.maison .wrap{grid-template-columns:1fr}}
+.citation{font-family:var(--display);font-size:clamp(1.5rem,1.1rem + 1.4vw,2.1rem);line-height:1.3;font-style:italic;margin:0 0 1.5rem}
+.signature{font-size:.84rem;letter-spacing:.16em;color:var(--laiton);text-transform:uppercase}
+.medaille{border:1px solid var(--filet);padding:clamp(1.75rem,4vw,2.75rem);background:var(--fond-2)}
+.medaille dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.85rem 1.5rem;font-size:.92rem}
+.medaille dt{color:var(--laiton);font-size:.76rem;letter-spacing:.14em;padding-top:.28rem;text-transform:uppercase;white-space:nowrap}
+.medaille dd{margin:0;color:var(--texte-doux)}
+
+/* ---------- déroulé (séquence numérotée justifiée) ---------- */
+.deroule{counter-reset:etape;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem}
+.etape{position:relative;padding-top:2.75rem}
+.etape::before{
+  counter-increment:etape;content:counter(etape,decimal-leading-zero);
+  position:absolute;top:0;left:0;font-family:var(--display);font-size:1.15rem;color:var(--laiton);
+}
+.etape::after{content:"";position:absolute;top:1.85rem;left:0;right:1.5rem;height:1px;background:var(--filet)}
+.etape h3{font-size:1.1rem;margin-bottom:.5rem}
+.etape p{color:var(--texte-doux);font-size:.93rem;margin:0}
+
+/* ---------- tarifs ---------- */
+.tarifs{background:var(--fond-2)}
+.grille-tarifs{border-top:1px solid var(--filet)}
+.ligne{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:1.15rem 0;border-bottom:1px solid var(--filet);align-items:baseline}
+.ligne span:first-child{font-weight:500}
+.ligne small{display:block;font-weight:400;color:var(--texte-doux);font-size:.86rem;margin-top:.2rem}
+.prix{font-family:var(--display);font-size:1.3rem;white-space:nowrap;color:var(--laiton)}
+.note{font-size:.85rem;color:var(--texte-doux);margin-top:1.5rem}
+
+/* ---------- avis ---------- */
+.avis{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(2rem,4vw,3.5rem)}
+.avis blockquote{margin:0;padding-top:1.5rem;border-top:2px solid var(--laiton)}
+.avis p{font-size:.98rem;color:var(--texte-doux)}
+.avis footer{font-size:.84rem;color:var(--texte)}
+.avis footer span{display:block;color:var(--texte-doux);font-size:.8rem;margin-top:.2rem}
+
+/* ---------- zone ---------- */
+.zone{background:var(--panneau);color:#E7EDEA}
+.zone h2{color:#F4F2EC}
+.zone p{color:#B9CBC7}
+.quartiers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;list-style:none;padding:0}
+.quartiers li{border:1px solid rgba(224,192,138,.3);padding:.45rem 1rem;font-size:.85rem;color:#C6D6D2}
+
+/* ---------- questions ---------- */
+details{border-bottom:1px solid var(--filet)}
+summary{cursor:pointer;padding:1.35rem 0;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:1.5rem;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:1.4rem;color:var(--laiton);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--texte-doux);font-size:.95rem;max-width:70ch;padding-bottom:1.25rem;margin:0}
+
+/* ---------- devis ---------- */
+.devis{background:var(--email);color:#E7EDEA}
+.devis .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem)}
+@media (max-width:900px){.devis .wrap{grid-template-columns:1fr}}
+.devis h2{color:#F4F2EC}
+.devis .chapo{color:#B9CBC7}
+.champ{margin-bottom:1.25rem}
+.champ label{display:block;font-size:.78rem;letter-spacing:.14em;color:var(--laiton-clair);margin-bottom:.5rem;text-transform:uppercase}
+.champ input,.champ select,.champ textarea{
+  width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(224,192,138,.28);
+  color:#F4F2EC;font-family:var(--corps);font-size:1rem;padding:.85rem 1rem;border-radius:1px;
+}
+.champ textarea{min-height:120px;resize:vertical}
+.champ select option{color:#13201F}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media (max-width:560px){.duo{grid-template-columns:1fr}}
+.mention{font-size:.8rem;color:#9FB4B0;margin-top:1rem}
+.confirmation{border:1px solid var(--laiton);padding:1.25rem;margin-top:1.25rem;font-size:.92rem;color:#F4F2EC;display:none}
+.confirmation.visible{display:block}
+
+/* ---------- pied ---------- */
+footer.pied{background:var(--email-profond);color:#9FB4B0;padding:clamp(3rem,6vw,4.5rem) 0 2rem;font-size:.88rem}
+.pied-grille{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(224,192,138,.18)}
+@media (max-width:760px){.pied-grille{grid-template-columns:1fr}}
+.pied h4{font-family:var(--display);font-weight:400;font-size:1rem;color:#E0C08A;margin:0 0 1rem;letter-spacing:.06em}
+.pied ul{list-style:none;margin:0;padding:0}
+.pied li{margin-bottom:.5rem}
+.pied a{text-decoration:none}
+.pied a:hover{color:#E0C08A}
+.legal{padding-top:1.75rem;font-size:.78rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
+
+/* ---------- barre mobile fixe ---------- */
+.barre-mobile{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  background:var(--email-profond);border-top:1px solid rgba(224,192,138,.3);
+  padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom,0px));
+  gap:.75rem;
+}
+.barre-mobile .btn{flex:1;padding:.85rem .5rem;font-size:.9rem}
+@media (max-width:760px){.barre-mobile{display:flex}body{padding-bottom:84px}}
+</style>
+</head>
+<body>
+
+<header class="barre">
+  <div class="wrap">
+    <a class="marque" href="#haut"><b>STEMA</b><span>Plomberie</span></a>
+    <nav class="liens">
+      <a href="#prestations">Prestations</a>
+      <a href="#maison">La maison</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#questions">Questions</a>
+      <a href="#devis">Devis</a>
+    </nav>
+    <a class="btn" href="tel:+33199004141">01 99 00 41 41</a>
+  </div>
+</header>
+
+<main id="haut">
+
+<!-- HÉROS -->
+<section class="heros">
+  <div class="wrap">
+    <div>
+      <p class="sur-titre">Paris et proche couronne · depuis 1998</p>
+      <h1>L'eau ne devrait<br>jamais se faire<br><em>remarquer.</em></h1>
+      <p class="intro">Fuites, chauffe-eau, robinetterie de caractère, salles de bains d'exception. Nous entretenons les réseaux d'immeubles haussmanniens comme on entretient une belle mécanique : discrètement, et pour longtemps.</p>
+      <div class="actions">
+        <a class="btn" href="#devis">Demander un devis gratuit</a>
+        <a class="btn creux" href="tel:+33199004141">Urgence 24h/24</a>
+      </div>
+      <p class="dispo"><span class="pastille" aria-hidden="true"></span> Deux équipes en intervention ce matin dans le 7<sup>e</sup> et le 16<sup>e</sup></p>
+    </div>
+
+    <div class="schema" aria-hidden="true">
+      <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#E0C08A" stroke-opacity=".28" stroke-width="1">
+          <path d="M40 40h380M40 120h380M40 200h380M40 280h380M40 360h380" stroke-dasharray="2 10"/>
+        </g>
+        <!-- colonne montante principale -->
+        <path class="trace" style="--l:1400" d="M70 390V150c0-16 13-30 30-30h120c16 0 30-13 30-30V60c0-16 13-30 30-30h110" stroke="#E0C08A" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- dérivations -->
+        <path class="trace" style="--l:600" d="M100 260h130c16 0 30 13 30 30v70" stroke="#E0C08A" stroke-opacity=".6" stroke-width="1.5" stroke-linecap="round"/>
+        <path class="trace" style="--l:520" d="M100 330h240c16 0 30-13 30-30v-60" stroke="#E0C08A" stroke-opacity=".45" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- raccords -->
+        <g fill="#0B3B3C" stroke="#E0C08A" stroke-width="1.5">
+          <circle cx="100" cy="260" r="5"/><circle cx="100" cy="330" r="5"/>
+          <circle cx="260" cy="360" r="5"/><circle cx="370" cy="240" r="5"/>
+        </g>
+        <!-- vanne -->
+        <g stroke="#E0C08A" stroke-width="1.75" fill="none">
+          <circle cx="250" cy="60" r="17"/>
+          <path d="M250 43v34M233 60h34M238 48l24 24M262 48l-24 24" stroke-opacity=".7"/>
+        </g>
+        <!-- goutte -->
+        <g class="goutte">
+          <path d="M263 390c0 7-5.4 12-12 12s-12-5-12-12 12-20 12-20 12 13 12 20z" fill="#E0C08A" fill-opacity=".85"/>
+        </g>
+        <text x="40" y="410" fill="#E0C08A" fill-opacity=".5" font-family="Archivo,sans-serif" font-size="9" letter-spacing="3">RELEVÉ D'INSTALLATION · IMMEUBLE 1878</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PREUVES -->
+<section class="preuves" aria-label="Chiffres clés">
+  <div class="wrap">
+    <ul>
+      <li><b>27 ans</b>de maison familiale</li>
+      <li><b>45 min</b>délai moyen en urgence</li>
+      <li><b>10 ans</b>de garantie décennale</li>
+      <li><b>4 800</b>interventions par an</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRESTATIONS -->
+<section id="prestations">
+  <div class="wrap">
+    <div class="tete">
+      <div class="colonne"></div>
+      <div>
+        <h2>Ce que nous réparons,<br>installons et entretenons</h2>
+        <p class="chapo">Une seule équipe, formée en interne, du dépannage de nuit à la salle de bains dessinée avec votre architecte. Pas de sous-traitance.</p>
+      </div>
+    </div>
+
+    <div class="prestations">
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c3 4.5 5.5 7.2 5.5 10.4A5.5 5.5 0 0 1 12 19a5.5 5.5 0 0 1-5.5-5.6C6.5 10.2 9 7.5 12 3z"/></svg>
+        <h3>Recherche et réparation de fuite</h3>
+        <p>Détection non destructive par caméra thermique et gaz traceur. On trouve avant de casser.</p>
+        <ul><li>Fuite encastrée et colonne</li><li>Dégât des eaux, rapport d'assurance</li><li>Reprise d'étanchéité</li></ul>
+      </article>
+
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/><circle cx="16" cy="16" r="1.6"/></svg>
+        <h3>Chauffe-eau et chaudière</h3>
+        <p>Remplacement, entretien annuel et mise aux normes gaz, toutes marques.</p>
+        <ul><li>Ballon thermodynamique</li><li>Contrat d'entretien</li><li>Attestation d'entretien fournie</li></ul>
+      </article>
+
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 19l7-7"/><path d="M14 10a4 4 0 1 0 0-5.6L16 6.5 13.5 9 11 6.5"/><circle cx="6" cy="18" r="2"/></svg>
+        <h3>Robinetterie et sanitaires</h3>
+        <p>Pose de pièces de fabricants français et italiens, finitions laiton brut, nickel, noir mat.</p>
+        <ul><li>Mitigeurs thermostatiques</li><li>WC suspendus, bâti-support</li><li>Vasques et bondes sur mesure</li></ul>
+      </article>
+
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20V9a5 5 0 0 1 10 0v11"/><path d="M14 9h6"/><path d="M17 12v4"/><path d="M7 14h4"/></svg>
+        <h3>Rénovation de salle de bains</h3>
+        <p>Conception, dépose, plomberie, carrelage et électricité coordonnés. Un seul interlocuteur du premier croquis à la réception.</p>
+        <ul><li>Plan d'implantation chiffré</li><li>Chantier en site occupé</li><li>Chantier propre chaque soir</li></ul>
+      </article>
+
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v6"/><path d="M8 9h8l-1.5 9a2.5 2.5 0 0 1-5 0z"/><path d="M6 21h12"/></svg>
+        <h3>Débouchage et canalisations</h3>
+        <p>Hydrocurage haute pression et inspection caméra, sans produits corrosifs pour vos évacuations anciennes.</p>
+        <ul><li>Colonnes d'immeuble</li><li>Chemisage sans tranchée</li><li>Rapport vidéo remis</li></ul>
+      </article>
+
+      <article class="presta">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 14V5a2.5 2.5 0 0 1 5 0v9a4 4 0 1 1-5 0z"/><path d="M11.5 7v7"/></svg>
+        <h3>Chauffage et radiateurs</h3>
+        <p>Désembouage, équilibrage de réseau, pose de radiateurs fonte ou décoratifs et plancher chauffant.</p>
+        <ul><li>Diagnostic de rendement</li><li>Robinets thermostatiques</li><li>Remise en eau garantie</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCE -->
+<section class="urgence">
+  <div class="wrap">
+    <div>
+      <h2>Une fuite à 3h du matin<br>reste une fuite à 3h du matin</h2>
+      <p>Nos astreintes sont tenues par nos propres plombiers, pas par une centrale d'appel. Vous parlez à la personne qui viendra. Le tarif de nuit vous est annoncé au téléphone, avant le déplacement, et il ne bouge plus.</p>
+      <p style="margin-top:1.75rem"><a class="tel-grand" href="tel:+33199004141">01 99 00 41 41</a></p>
+    </div>
+    <aside class="carte-urgence">
+      <p>Ce que nous coupons en premier, pendant que nous arrivons : dites-le nous au téléphone, nous vous guidons pour fermer la bonne vanne.</p>
+      <div class="horaire"><span>Lundi – vendredi</span><span>7h – 20h</span></div>
+      <div class="horaire"><span>Samedi</span><span>8h – 18h</span></div>
+      <div class="horaire"><span>Nuit, dimanche, jours fériés</span><span>Astreinte</span></div>
+      <a class="btn pleine" href="tel:+33199004141">Appeler maintenant</a>
+    </aside>
+  </div>
+</section>
+
+<!-- MAISON -->
+<section class="maison" id="maison">
+  <div class="wrap">
+    <div>
+      <div class="tete">
+        <div class="colonne"></div>
+        <div>
+          <h2>La maison Stema</h2>
+        </div>
+      </div>
+      <blockquote class="citation">« Mon père réparait les colonnes de cet immeuble. J'y retourne trente ans plus tard, et je reconnais ses soudures. »</blockquote>
+      <p class="signature">Julien Stema, gérant</p>
+      <p style="margin-top:1.5rem;color:var(--texte-doux);max-width:52ch">Fondée par Marc Stema dans le 11<sup>e</sup> arrondissement, la maison s'est construite sur un principe simple : on répare ce qui peut l'être, on remplace ce qui doit l'être, et on explique la différence. Nos huit plombiers sont salariés, formés chez nous, et interviennent avec les mêmes fournisseurs depuis vingt ans.</p>
+    </div>
+    <div class="medaille">
+      <dl>
+        <dt>Statut</dt><dd>SARL familiale, deuxième génération</dd>
+        <dt>Assurance</dt><dd>Décennale et responsabilité civile professionnelle, attestation fournie avant chantier</dd>
+        <dt>Qualifications</dt><dd>Professionnel Gaz (PG), habilitation soudure cuivre et multicouche</dd>
+        <dt>Équipe</dt><dd>8 plombiers salariés, 3 véhicules ateliers</dd>
+        <dt>Engagement</dt><dd>Devis détaillé, ligne par ligne, avant toute intervention non urgente</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- DÉROULÉ -->
+<section style="background:var(--fond-2)">
+  <div class="wrap">
+    <div class="tete">
+      <div class="colonne"></div>
+      <div>
+        <h2>Comment se passe<br>une intervention</h2>
+        <p class="chapo">Quatre étapes, aucune surprise sur la facture.</p>
+      </div>
+    </div>
+    <div class="deroule">
+      <div class="etape">
+        <h3>Vous appelez</h3>
+        <p>Un plombier vous répond, pose trois questions et estime la nature du problème. Vous savez tout de suite si c'est urgent.</p>
+      </div>
+      <div class="etape">
+        <h3>Diagnostic sur place</h3>
+        <p>Nous identifions la cause, pas seulement le symptôme. Le diagnostic est offert si vous nous confiez les travaux.</p>
+      </div>
+      <div class="etape">
+        <h3>Devis signé</h3>
+        <p>Chiffrage détaillé sous 24h, main-d'œuvre et fournitures séparées. Il ne bouge plus sans votre accord écrit.</p>
+      </div>
+      <div class="etape">
+        <h3>Intervention et suivi</h3>
+        <p>Chantier laissé propre, photos avant/après, et un passage de contrôle offert dans les six mois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="tarifs" id="tarifs">
+  <div class="wrap">
+    <div class="tete">
+      <div class="colonne"></div>
+      <div>
+        <h2>Nos repères de prix</h2>
+        <p class="chapo">Les fourchettes ci-dessous couvrent la grande majorité de nos interventions courantes, déplacement inclus, en journée.</p>
+      </div>
+    </div>
+    <div class="grille-tarifs">
+      <div class="ligne"><span>Déplacement et diagnostic<small>Offert si travaux confiés le jour même</small></span><span class="prix">69 €</span></div>
+      <div class="ligne"><span>Recherche de fuite non destructive<small>Caméra thermique, rapport écrit</small></span><span class="prix">190 – 380 €</span></div>
+      <div class="ligne"><span>Remplacement de mitigeur<small>Fourniture client ou fournie par nos soins</small></span><span class="prix">120 – 260 €</span></div>
+      <div class="ligne"><span>Débouchage d'évacuation<small>Furet ou hydrocurage selon accès</small></span><span class="prix">140 – 420 €</span></div>
+      <div class="ligne"><span>Remplacement de chauffe-eau 200 L<small>Dépose, pose, mise en service, évacuation de l'ancien</small></span><span class="prix">1 190 – 1 850 €</span></div>
+      <div class="ligne"><span>Rénovation complète de salle de bains<small>À partir de, pour 5 m², tous corps d'état</small></span><span class="prix">9 500 €</span></div>
+      <div class="ligne"><span>Majoration nuit, dimanche et jours fériés<small>Annoncée au téléphone avant le départ</small></span><span class="prix">+ 40 %</span></div>
+    </div>
+    <p class="note">Prix TTC, TVA 10 % applicable aux logements de plus de deux ans. Un devis nominatif et détaillé remplace toujours ces fourchettes avant le début des travaux.</p>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section>
+  <div class="wrap">
+    <div class="tete">
+      <div class="colonne"></div>
+      <div><h2>Ce qu'en disent<br>nos clients</h2></div>
+    </div>
+    <div class="avis">
+      <blockquote>
+        <p>Fuite dans le plafond du voisin un dimanche soir. Arrivés en cinquante minutes, colonne coupée proprement, et surtout un vrai rapport pour l'assurance le lendemain. Le syndic n'a rien eu à redire.</p>
+        <footer>Claire D.<span>Copropriétaire, Paris 7<sup>e</sup></span></footer>
+      </blockquote>
+      <blockquote>
+        <p>Nous leur confions l'entretien de quatorze immeubles. Ils appellent quand ils ont fini, ils facturent ce qu'ils ont annoncé, et les gardiens les adorent. C'est rare.</p>
+        <footer>Cabinet Levasseur<span>Syndic de copropriété, Neuilly</span></footer>
+      </blockquote>
+      <blockquote>
+        <p>Salle de bains refaite en trois semaines avec une robinetterie compliquée à encastrer. Julien a redessiné l'implantation pour gagner trente centimètres. Aucun retard.</p>
+        <footer>Antoine M.<span>Appartement haussmannien, Paris 16<sup>e</sup></span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section class="zone">
+  <div class="wrap">
+    <h2>Où nous intervenons</h2>
+    <p style="max-width:56ch;margin-top:1.25rem">Paris intra-muros et première couronne ouest. Au-delà, nous nous déplaçons pour les chantiers de rénovation, sur devis.</p>
+    <ul class="quartiers">
+      <li>Paris 1<sup>er</sup>–4<sup>e</sup></li><li>Paris 5<sup>e</sup>–7<sup>e</sup></li><li>Paris 8<sup>e</sup></li><li>Paris 9<sup>e</sup>–11<sup>e</sup></li>
+      <li>Paris 15<sup>e</sup></li><li>Paris 16<sup>e</sup></li><li>Paris 17<sup>e</sup></li><li>Neuilly-sur-Seine</li>
+      <li>Levallois-Perret</li><li>Boulogne-Billancourt</li><li>Courbevoie</li><li>Saint-Cloud</li>
+    </ul>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section id="questions">
+  <div class="wrap" style="max-width:860px">
+    <div class="tete">
+      <div class="colonne"></div>
+      <div><h2>Questions fréquentes</h2></div>
+    </div>
+    <details open>
+      <summary>Sous combien de temps pouvez-vous venir ?</summary>
+      <p>En urgence, comptez 45 minutes en moyenne dans Paris, et jusqu'à 1h30 la nuit selon les équipes disponibles. Pour une intervention programmée, nous proposons généralement un créneau sous 48 heures.</p>
+    </details>
+    <details>
+      <summary>Le devis est-il vraiment gratuit ?</summary>
+      <p>Oui pour tous les travaux programmés : visite, métré et chiffrage détaillé sans engagement. En dépannage urgent, le déplacement et le diagnostic sont facturés 69 €, offerts si vous nous confiez la réparation dans la foulée.</p>
+    </details>
+    <details>
+      <summary>Travaillez-vous avec les assurances en cas de dégât des eaux ?</summary>
+      <p>Nous rédigeons un rapport de recherche de fuite conforme aux attentes des assureurs, avec photos, localisation et cause identifiée. Nous pouvons échanger directement avec votre expert et votre syndic si vous le souhaitez.</p>
+    </details>
+    <details>
+      <summary>Puis-je fournir moi-même ma robinetterie ?</summary>
+      <p>Bien sûr. Nous posons volontiers vos pièces, y compris les marques italiennes ou anglaises à raccords spécifiques. La garantie fabricant reste la vôtre ; notre garantie couvre la pose.</p>
+    </details>
+    <details>
+      <summary>Intervenez-vous pour les copropriétés et les syndics ?</summary>
+      <p>C'est une grande partie de notre activité : colonnes d'eau, chaufferies collectives, contrats d'entretien annuels et astreinte dédiée. Nous établissons des conventions annuelles avec tarifs négociés.</p>
+    </details>
+    <details>
+      <summary>Quels moyens de paiement acceptez-vous ?</summary>
+      <p>Carte bancaire sur place, virement et chèque. Pour les chantiers de rénovation : 30 % à la commande, 40 % à mi-parcours, le solde à la réception.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="devis" id="devis">
+  <div class="wrap">
+    <div>
+      <h2>Demander<br>un devis</h2>
+      <p class="chapo" style="margin-top:1.5rem">Décrivez votre besoin en deux lignes. Nous rappelons dans la journée, et le devis part sous 24 heures.</p>
+      <p style="margin-top:2rem"><a class="tel-grand" href="tel:+33199004141">01 99 00 41 41</a></p>
+      <p class="mention">Ou écrivez-nous : <a href="mailto:contact@plomberie-stema.fr" style="color:var(--laiton-clair)">contact@plomberie-stema.fr</a><br>14 rue du Chemin Vert, 75011 Paris</p>
+    </div>
+
+    <div>
+      <div class="duo">
+        <div class="champ"><label for="nom">Nom</label><input id="nom" type="text" autocomplete="name" placeholder="Claire Deschamps"></div>
+        <div class="champ"><label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel" placeholder="06 12 34 56 78"></div>
+      </div>
+      <div class="duo">
+        <div class="champ"><label for="type">Nature de l'intervention</label>
+          <select id="type">
+            <option>Fuite ou dégât des eaux</option>
+            <option>Chauffe-eau ou chaudière</option>
+            <option>Canalisation bouchée</option>
+            <option>Robinetterie et sanitaires</option>
+            <option>Rénovation de salle de bains</option>
+            <option>Chauffage et radiateurs</option>
+            <option>Contrat copropriété</option>
+          </select>
+        </div>
+        <div class="champ"><label for="secteur">Secteur</label><input id="secteur" type="text" placeholder="Paris 11e"></div>
+      </div>
+      <div class="champ"><label for="message">Votre situation</label><textarea id="message" placeholder="Depuis hier, une auréole s'agrandit au plafond de la salle de bains."></textarea></div>
+      <button class="btn pleine" type="button" id="envoyer">Envoyer ma demande</button>
+      <p class="mention">Réponse le jour même, du lundi au samedi. Vos coordonnées servent uniquement à vous rappeler.</p>
+      <div class="confirmation" id="confirmation" role="status"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="pied-grille">
+      <div>
+        <a class="marque" href="#haut" style="color:#E7EDEA"><b>STEMA</b><span>Plomberie</span></a>
+        <p style="margin-top:1.25rem;max-width:34ch">Maison de plomberie familiale installée à Paris depuis 1998. Dépannage, rénovation, chauffage et contrats de copropriété.</p>
+      </div>
+      <div>
+        <h4>Prestations</h4>
+        <ul>
+          <li><a href="#prestations">Recherche de fuite</a></li>
+          <li><a href="#prestations">Chauffe-eau et chaudière</a></li>
+          <li><a href="#prestations">Débouchage</a></li>
+          <li><a href="#prestations">Salle de bains</a></li>
+          <li><a href="#prestations">Chauffage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous joindre</h4>
+        <ul>
+          <li><a href="tel:+33199004141">01 99 00 41 41</a></li>
+          <li><a href="mailto:contact@plomberie-stema.fr">contact@plomberie-stema.fr</a></li>
+          <li>14 rue du Chemin Vert<br>75011 Paris</li>
+          <li>Astreinte 24h/24, 7j/7</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Plomberie Stema — SARL au capital de 25 000 €</span>
+      <span>SIRET 000 000 000 00000 · Assurance décennale AXA n° 00000000</span>
+      <span>Mentions légales · Confidentialité</span>
+    </div>
+  </div>
+</footer>
+
+<div class="barre-mobile">
+  <a class="btn creux" href="#devis">Devis gratuit</a>
+  <a class="btn" href="tel:+33199004141">Appeler</a>
+</div>
+
+<script>
+(function(){
+  var bouton = document.getElementById('envoyer');
+  var boite = document.getElementById('confirmation');
+  bouton.addEventListener('click', function(){
+    var nom = document.getElementById('nom').value.trim();
+    var tel = document.getElementById('tel').value.trim();
+    var type = document.getElementById('type').value;
+    var secteur = document.getElementById('secteur').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    if(!nom || !tel){
+      boite.textContent = "Il manque votre nom et votre téléphone : sans eux, nous ne pouvons pas vous rappeler.";
+      boite.classList.add('visible');
+      (nom ? document.getElementById('tel') : document.getElementById('nom')).focus();
+      return;
+    }
+    var corps = "Nom : " + nom + "\nTéléphone : " + tel + "\nIntervention : " + type +
+                "\nSecteur : " + (secteur || "non précisé") + "\n\n" + (message || "—");
+    var lien = "mailto:contact@plomberie-stema.fr?subject=" +
+               encodeURIComponent("Demande de devis — " + type) + "&body=" + encodeURIComponent(corps);
+    boite.innerHTML = "Votre demande est prête. Votre messagerie s'ouvre pour l'envoyer à contact@plomberie-stema.fr. " +
+                      "Pour une urgence, appelez plutôt le <a href=\"tel:+33199004141\" style=\"color:#E0C08A\">01 99 00 41 41</a>.";
+    boite.classList.add('visible');
+    window.location.href = lien;
+  });
+})();
+</script>
+</body>
+</html>
